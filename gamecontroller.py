@@ -20,7 +20,7 @@ class Gamecontroller():
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    # add to bullet list
+                    # Add to bullet to bullet list if its under the maximum limit
                     if len(bullets) < self.settings.max_bullets:
                         new_bullet = Bullet(self.settings, self.screen, self.spaceship)
                         bullets.append(new_bullet)

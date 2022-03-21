@@ -23,7 +23,7 @@ class Background():
         if self.bgY2 >= self.bg_image_rect.height:
             self.bgY2 = -self.bg_image_rect.height
              
-      def blitme(self):
+      def draw_bg(self):
         #The first blit starts at the origin point, the top left corner and the second initializes at the top of the screen, just out of sight (above) the screen). imaging having the same picture printet above
          self.screen.blit(self.bg_image, (self.bgX1, self.bgY1))
          self.screen.blit(self.bg_image, (self.bgX2, self.bgY2))

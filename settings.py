@@ -2,6 +2,7 @@ import pygame
 class Settings():
 
     def __init__(self):
+        """A class to put all static settings"""
         # Screen width, height and delta
         self.width = 800
         self.height = 600
@@ -18,6 +19,6 @@ class Settings():
         self.white = (250,250,250)
         self.black = (0,0,0)
 
-        # astro image
+        # astro image as HP in gamestats
         self.astro_image = pygame.transform.scale(pygame.image.load("resources/astro.png"), (55,40))
         

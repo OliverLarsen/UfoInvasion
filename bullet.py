@@ -9,10 +9,13 @@ class Bullet():
         self.rect.centerx = spaceship.rect.centerx
         self.rect.top = spaceship.rect.top
         self.speed_factor = settings.bullet_speed_factor
+        # empty list to place bullets in
+        self.list = []
         
     def move_bullet(self):
         """Move the bullet up the screen"""
         self.rect.y -= self.speed_factor
     
     def draw_bullet(self):
+        """Draw the bullet at the top center of the spaceship"""
         self.screen.blit(self.image, (self.rect.centerx, self.rect.top))
