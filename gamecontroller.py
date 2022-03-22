@@ -33,7 +33,7 @@ class Gamecontroller():
                     self.gameactive = True
                     print("clicked play to start game")
                 if button_clicked1 and self.gameover == True:
-                    self.gamestats.game_reset_stats(ufos)
+                    self.gamestats.game_reset_stats(ufos, bullets)
                     self.gameactive = True
                     self.gameover = False
                     print("You clicked to play again")

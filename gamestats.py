@@ -8,10 +8,8 @@ class GameStats():
         self.highscore = 0
         self.settings = settings
         self.screen = screen
-        self.screen_rect = self.screen.get_rect()
-        self.ufo_last_increase_speed = 0
         self.ufo_speed = 1
-        self.ufo_wave_length = 3
+        self.ufo_wave_length = 2
         self.hp = 3
         
     def draw_score(self, font_size, x, y):
@@ -50,7 +48,7 @@ class GameStats():
         if self.hp >= 3:
             self.screen.blit(settings.astro_image, (635,560))
     
-    def game_reset_stats(self, ufos):
+    def game_reset_stats(self, ufos, bullets):
         """On game active screen, resetting gamestats and removing displayed ufos on screen"""
         self.score = 0
         self.level = 0
@@ -58,5 +56,7 @@ class GameStats():
         self.ufo_speed = 1
         self.hp = 3
         ufos.ufo_list.clear()
+        bullets.clear()
+        
         
         

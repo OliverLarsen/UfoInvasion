@@ -1,5 +1,6 @@
 import pygame
 class Background():
+      """Creating a background who moves down"""
       def __init__(self, screen):
             self.screen = screen
             self.bg_image = pygame.image.load("resources/starry-night-sky.jpg")

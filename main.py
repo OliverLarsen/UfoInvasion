@@ -7,29 +7,8 @@ from gamestats import GameStats
 from gamecontroller import Gamecontroller
 from ufos import Ufos
 from bullet import Bullet
-import sys
-import os
 
-def resource_path(relative_path):
-    try:
-    # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
-url = resource_path('resources/astro.png')
-astro_url = pygame.image.load(url)
-url1 = resource_path('resources/light_bullet.png')
-bullet_url = pygame.image.load(url1)
-url2 = resource_path('resources/starry-night-sky.jpg')
-bg_url = pygame.image.load(url2)
-url3 = resource_path('resources/ufo.png')
-ufo_url = pygame.image.load(url3)
-url4 = resource_path('resources/spaceship_red.png')
-spaceship_url = pygame.image.load(url4)
-
-# pygame initialise
+# pygame initialize
 pygame.init()
 
 def draw_window(screen, settings, ufos, spaceship, bullets, gamestats):
@@ -102,7 +81,7 @@ def run_game():
     bg = Background(screen)
     ufos = Ufos(settings)
     bullets = Bullet(settings, screen, spaceship)
-                                        
+                          
     # motor
     while True:
         clock.tick(framerate)
@@ -113,8 +92,9 @@ def run_game():
             # Game active screen
             bg.draw_bg()
             bg.update()
-            # When ufo_list is empty gain stats and create a new fleet of ufos
+            # When ufo_list is empty increase stats and create a new fleet of ufos
             if len(ufos.ufo_list) == 0:
+                print("level up increasing speed")
                 gamestats.ufo_speed += 1
                 gamestats.level += 1
                 gamestats.ufo_wave_length += 1
